@@ -12,6 +12,19 @@ p {
     font-size: larger;
     font-weight: bold;
 }
+.relativePosition {
+    position: relative;
+}
+#errorDiv {
+    color: black;
+    padding:7em;
+    background-color: rgba(245, 67, 67, 0.829);
+    position: absolute;
+    top: 25%;
+    z-index: 1;
+    width: 95%;
+    display: none;
+}
 
 @media only screen and (max-width: 400px){
     input {

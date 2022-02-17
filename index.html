@@ -17,11 +17,15 @@
     <header class="text-center m-5">
         <h1>Wallet Manager <img id="logoLikeImg" src="images/money-hand.png" alt="money and wallet in hand picture"></h1>
     </header>
+
+    <!-- main part containing calculation and image -->
     <main class="row text-center bg-warning">
-        <section class="col-lg-7 bg-secondary">
+        <section class="col-md-7 bg-secondary">
             <img id="mainImage" src="images/Wallet.jpg" alt="image of a wallet">
         </section>
-        <section class="col pt-4">
+
+        <!-- income and calculation part -->
+        <section class="relativePosition col pt-4">
             <div>
                 <h2>Income</h2>
                 <p>income: <input type="number" name="" id="income"></p>
@@ -33,17 +37,21 @@
                 <p>Clothes: <input type="text" id="expenses3"></p>
                 <button class="btn btn-lg btn-primary">Calculate</button>
             </div>
-            <div>
-                <section class="pt-2">
+            <div  class="pt-2">
                     <h4>Total Expenses: <span id="totalExpenses"></span></h2>
                     <h4>Balance: <span id="initialBalance"></span></h2>
 
                     <p>save: <input type="text" id="saving-percent"> % <button class="btn btn-lg btn-primary">Save</button></p>
                     
                     <h4>Saving Amount: <span id="savingAmount"></span></h2>
-                    <h4>Remaining Balance: <span id="remainingBalance"></span></h2>
-                </section>
-                
+                    <h4>Remaining Balance: <span id="remainingBalance"></span></h2> 
+            </div>
+
+            <!-- warning message -->
+            <div id="errorDiv">
+                <h1 id="errorH1"> Error </h1>
+                <p id="error type">please,</p>
+                <button id="errorOk"> ok</button>
             </div>
             
         </section>
