@@ -1,0 +1,21 @@
+#logoLikeImg {
+    width: 3rem;
+    height: 3rem;
+
+}
+#mainImage {
+    width: 90%;
+    height: 40em;
+}
+
+p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 400px){
+    input {
+        display: block;
+        margin: auto;
+    }
+}
