@@ -1,11 +1,11 @@
 
-// triggering the error messages 
+//function to triggering the error messages 
 function errorMessage(errorMsg){
     document.getElementById('errorDiv').style.display = 'block';
-    let message = document.getElementById("errorType")
+    const message = document.getElementById("errorType")
     message.innerText = errorMsg;
 }
-
+// error click handler
 document.getElementById('errorOk').addEventListener('click', function(){
     document.getElementById('errorDiv').style.display = 'none';
 })
@@ -13,20 +13,20 @@ document.getElementById('errorOk').addEventListener('click', function(){
 // error messages 
 const errorType1 = "enter numbers, character and empty place doesn't work";
 const errorType2 = "enter positve number, negative number doesn't work";
+const errorType3 = "check, your expense is more than income";
+const errorType4 = "check, your saving target is more than remaining balance";
 
-// function of validating the input and error message 
+// function of validating the input and trigger error message 
 function numberValidate(string){
     num = parseFloat(string);
-    // ************************* need modification
     if(isNaN(num)){
         errorMessage(errorType1);
     }
     else if(num < 0){
         errorMessage(errorType2);
+        return 'error';
     }
-    else{
-        return num;
-    }
+    return num;
 }
 
 // function to get value from any given id 
@@ -42,11 +42,10 @@ function setInnerText(idName, amount){
 }
 
 // making income and initial balance variable to use letter 
-let initialBalance = null;
 let income = null;
+let initialBalance = null;
 
-
-// calicking the calculate button and setting values
+// calicking the calculate button and setting values to inital cost and balance
 document.getElementById('calculate').addEventListener('click',function(){
     // getting value form all input field 
     income = idToValue("income");
@@ -57,32 +56,31 @@ document.getElementById('calculate').addEventListener('click',function(){
     const initialCost = foodCost + rentCost + clothesCost;
     initialBalance = income - initialCost ;
 
-    // initial expenses
-    setInnerText('totalExpenses', initialCost);
-    // initial balance
-    setInnerText('initialBalance', initialBalance);
+    if(initialCost < income){
+        // initial expenses
+        setInnerText('totalExpenses', initialCost);
+        // initial balance
+        setInnerText('initialBalance', initialBalance);
+    }
+    else if(income < initialCost && income > 0){
+        errorMessage(errorType3);
+    }
 })
-
-// ************************************
-
 
 // clicking the saving button and setting final values
 document.getElementById('saveButton').addEventListener('click', function(){
     const savingPercent = idToValue("saving-percent");
     const savingAmount = income * (savingPercent/100);
     const remainingBalance = initialBalance - savingAmount;
-
-    // saving amount
-    setInnerText('savingAmount', savingAmount);
-    // final balance
-    setInnerText('remainingBalance', remainingBalance);
+    
+    // validating the saving amount 
+    if(savingAmount < initialBalance){
+        // saving amount
+        setInnerText('savingAmount', savingAmount);
+        // final balance
+        setInnerText('remainingBalance', remainingBalance);
+    }
+    else{
+        errorMessage(errorType4);
+    }
 })
-
-// calculating cost, income
-
-
-
-// setting values to the costs and balance *************************
-
-
-// console.log(income, foodCost, rentCost, clothesCost);

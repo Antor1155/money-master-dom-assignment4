@@ -1,13 +1,17 @@
+/* logo image */
 #logoLikeImg {
     width: 3rem;
     height: 3rem;
 
 }
+
+/* giving proper size to the main image */
 #mainImage {
     width: 90%;
     height: 40em;
 }
 
+/* giving size to the paragraph text */
 p {
     font-size: larger;
     font-weight: bold;
