@@ -9,13 +9,36 @@
 </head>
 <body>
     <header>
-        <h2>Wallet Manager </h2>
+        <h1>Wallet Manager <img src="images/money-hand.png" alt="money and wallet in hand picture"></h1>
     </header>
     <main>
         <section>
-            <img src="" alt="image of a wallet">
+            <img src="images/Wallet.jpg" alt="image of a wallet">
         </section>
         <section>
+            <div>
+                <h2>Income</h2>
+                <p>income: <input type="number" name="" id="income"></p>
+            </div>
+            <div>
+                <h2>Expenses</h2>
+                <p>Food: <input type="text" id="expenses1"></p>
+                <p>Rent: <input type="text" id="expenses2"></p>
+                <p>Clothes: <input type="text" id="expenses3"></p>
+                <button>Calculate</button>
+            </div>
+            <div>
+                <section>
+                    <h2>Total Expenses: <span id="totalExpenses"></span></h2>
+                    <h2>Balance: <span id="initialBalance"></span></h2>
+
+                    <p>save: <input type="text" id="saving-percent"> % <button>Save</button></p>
+                    
+                    <h2>Saving Amount: <span id="savingAmount"></span></h2>
+                    <h2>Remaining Balance: <span id="remainingBalance"></span></h2>
+                </section>
+                
+            </div>
             
         </section>
     </main>
