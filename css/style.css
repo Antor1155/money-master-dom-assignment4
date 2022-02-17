@@ -12,9 +12,13 @@ p {
     font-size: larger;
     font-weight: bold;
 }
+
+/* giving relative position to the parent of error message div  */
 .relativePosition {
     position: relative;
 }
+
+/* error message positioning and placing in good way  */
 #errorDiv {
     color: black;
     padding:7em;
@@ -25,7 +29,7 @@ p {
     width: 95%;
     display: none;
 }
-
+/* setting better postion for the input field in the mobile formate  */
 @media only screen and (max-width: 400px){
     input {
         display: block;

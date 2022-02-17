@@ -1,13 +1,31 @@
-// function of validating the input and error message 
 // triggering the error messages 
+function errorMessage(errorMsg){
+    document.getElementById('errorDiv').style.display = 'block';
+    let message = document.getElementById("errorType")
+    message.innerText = errorMsg;
+}
+
+document.getElementById('errorOk').addEventListener('click', function(){
+    document.getElementById('errorDiv').style.display = 'none';
+})
+
+
+// function of validating the input and error message 
 function numberValidate(string){
-    return parseFloat(string);
+    num = parseFloat(string);
+    if(isNaN(num)){
+        errorMessage();
+    }
+    else{
+        return num;
+    }
 }
 
 // function to get value from any given id 
 function idToValue(idName){
     const value = document.getElementById(idName).value;
-    return numberValidate(value);
+    valueInNum = numberValidate(value)
+    return valueInNum;
 }
 
 // function to set value in cost and balance fields 
@@ -51,8 +69,6 @@ document.getElementById('saveButton').addEventListener('click', function(){
     // final balance
     setInnerText('remainingBalance', remainingBalance);
 })
-
-
 
 // calculating cost, income
 
