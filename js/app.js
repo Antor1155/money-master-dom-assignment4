@@ -1,3 +1,4 @@
+
 // triggering the error messages 
 function errorMessage(errorMsg){
     document.getElementById('errorDiv').style.display = 'block';
@@ -9,12 +10,19 @@ document.getElementById('errorOk').addEventListener('click', function(){
     document.getElementById('errorDiv').style.display = 'none';
 })
 
+// error messages 
+const errorType1 = "enter numbers, character and empty place doesn't work";
+const errorType2 = "enter positve number, negative number doesn't work";
 
 // function of validating the input and error message 
 function numberValidate(string){
     num = parseFloat(string);
+    // ************************* need modification
     if(isNaN(num)){
-        errorMessage();
+        errorMessage(errorType1);
+    }
+    else if(num < 0){
+        errorMessage(errorType2);
     }
     else{
         return num;
